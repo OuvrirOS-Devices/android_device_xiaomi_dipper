@@ -1,3 +1,19 @@
+#
+# Copyright (C) 2018-2020 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
+
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
+
+# Get non-open-source specific aspects
+$(call inherit-product-if-exists, vendor/xiaomi/dipper/dipper-vendor.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2248
@@ -28,7 +44,7 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_USE_VNDK_OVERRIDE := true
 
 # Inherit from sdm845-common
-$(call inherit-product, device/xiaomi/dipper/sdm845.mk)
+$(call inherit-product, device/xiaomi/sdm845-common/sdm845.mk)
 
 # Audio
 PRODUCT_COPY_FILES += \

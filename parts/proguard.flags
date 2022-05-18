@@ -1,7 +1,0 @@
--keep class org.ouvriros.settings.dirac.* {
-  *;
-}
-
--keep class org.ouvriros.settings.doze.* {
-  *;
-}
